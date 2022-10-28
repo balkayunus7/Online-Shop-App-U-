@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Screens/DetailsScreen/components/CardCounterandLikeb.dart';
 import 'package:flutter_application_1/Screens/DetailsScreen/components/ColorsandSize.dart';
 import 'package:flutter_application_1/Screens/DetailsScreen/components/ProductTitleandImage.dart';
+import 'package:flutter_application_1/Screens/DetailsScreen/components/ShopandBuy.dart';
 import 'package:flutter_application_1/constants.dart';
 import 'package:flutter_application_1/models/products.dart';
 import 'package:flutter_application_1/Screens/DetailsScreen/components/Description.dart';
@@ -37,7 +39,14 @@ class DetailsBody extends StatelessWidget {
                     children: [
                       ColorsandSize(product: product),
                       DecriptionWidget(product: product),
+                      const SizedBox(
+                        height: 20,
+                      ),
                       const CardCounter(),
+                      const SizedBox(
+                        height: 35,
+                      ),
+                      ShopbandBuy(product: product)
                     ],
                   ),
                 ),
@@ -46,53 +55,6 @@ class DetailsBody extends StatelessWidget {
             ),
           )
         ],
-      ),
-    );
-  }
-}
-
-class CardCounter extends StatefulWidget {
-  const CardCounter({super.key});
-
-  @override
-  State<CardCounter> createState() => _CardCounterState();
-}
-
-class _CardCounterState extends State<CardCounter> {
-  @override
-  int numOfItems = 1;
-
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        buildOutlinBut(icon: Icons.remove, press: () {}),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kdefaultPaddin),
-          child: Text(
-            "01",
-            style: Theme.of(context)
-                .textTheme
-                .headlineSmall
-                ?.copyWith(color: ktextColor),
-          ),
-        ),
-        buildOutlinBut(icon: Icons.add, press: () {}),
-      ],
-    );
-  }
-
-  SizedBox buildOutlinBut(
-      {required IconData icon, required VoidCallback press}) {
-    return SizedBox(
-      width: 40,
-      height: 32,
-      child: OutlinedButton(
-        style: OutlinedButton.styleFrom(
-            padding: EdgeInsets.zero,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10))),
-        onPressed: press,
-        child: Icon(icon, color: Colors.black),
       ),
     );
   }

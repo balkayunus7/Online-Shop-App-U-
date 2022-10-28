@@ -22,27 +22,3 @@ class DecriptionWidget extends StatelessWidget {
     );
   }
 }
-
-class CardCounter extends StatefulWidget {
-  const CardCounter({super.key});
-
-  @override
-  State<CardCounter> createState() => _CardCounterState();
-}
-
-class _CardCounterState extends State<CardCounter> {
-  @override
-  int numOfItems = 1;
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SizedBox(
-          width: 40,
-          height: 30,
-          child:
-              OutlinedButton(onPressed: () {}, child: const Icon(Icons.remove)),
-        )
-      ],
-    );
-  }
-}
