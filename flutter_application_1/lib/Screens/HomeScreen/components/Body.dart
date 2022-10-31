@@ -1,5 +1,5 @@
 // ignore_for_file: file_names
-
+import 'package:hexcolor/hexcolor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Screens/DetailsScreen/DetailsScreen.dart';
 import 'package:flutter_application_1/Screens/HomeScreen/components/ItemCard.dart';
@@ -20,11 +20,11 @@ class Body extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: kdefaultPaddin),
           child: Text(
-            "Women HahaHa",
-            style: Theme.of(context)
-                .textTheme
-                .headlineMedium
-                ?.copyWith(fontWeight: FontWeight.w500, fontSize: 27),
+            "Happy Shop",
+            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 27,
+                ),
           ),
         ),
         const Categories(),

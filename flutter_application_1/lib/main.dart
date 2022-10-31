@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Screens/HomeScreen/MainScreen.dart';
+import 'package:flutter_application_1/Screens/WelcomeScreen/WelcomeScreen.dart';
+import 'package:flutter_application_1/models/products.dart';
 import 'constants.dart';
 
 void main() {
@@ -7,7 +8,9 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({
+    Key? key,
+  }) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -24,7 +27,7 @@ class MyApp extends StatelessWidget {
             iconTheme: IconThemeData(color: Colors.black),
             elevation: 0,
           )),
-      home: const MainScreen(),
+      home: OnBoardingScreen(),
     );
   }
 }
