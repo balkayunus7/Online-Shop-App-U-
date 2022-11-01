@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants.dart';
 import 'package:flutter_application_1/models/products.dart';
 
-class ColorsandSize extends StatelessWidget {
-  const ColorsandSize({
+class ColorsandSize extends StatelessWidget with _Utility {
+  ColorsandSize({
     super.key,
     required this.product,
   });
@@ -19,22 +19,22 @@ class ColorsandSize extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Color",
+                colorText,
                 style: Theme.of(context)
                     .textTheme
                     .labelLarge
                     ?.copyWith(fontWeight: FontWeight.w500),
               ),
-              Row(children: const [
+              Row(children: [
                 ColorDot(
-                  color: Color(0xFF356C95),
+                  color: colorDotBlue,
                   isSelected: true,
                 ),
                 ColorDot(
-                  color: Color(0xFFF8C078),
+                  color: colorDotCof,
                 ),
                 ColorDot(
-                  color: Color(0xFFA29B9B),
+                  color: colorDotGrey,
                 ),
               ]),
             ],
@@ -42,23 +42,25 @@ class ColorsandSize extends StatelessWidget {
         ),
         Expanded(
           child: RichText(
-              text: TextSpan(style: TextStyle(color: ktextColor), children: [
-            TextSpan(text: "Size\n"),
-            TextSpan(
-                text: "${product.size} cm",
-                style: Theme.of(context)
-                    .textTheme
-                    .headlineMedium
-                    ?.copyWith(fontWeight: FontWeight.bold))
-          ])),
+              text: TextSpan(
+                  style: const TextStyle(color: ktextColor),
+                  children: [
+                TextSpan(text: "$sizeText\n"),
+                TextSpan(
+                    text: "${product.size} cm",
+                    style: Theme.of(context)
+                        .textTheme
+                        .headlineMedium
+                        ?.copyWith(fontWeight: FontWeight.bold))
+              ])),
         )
       ],
     );
   }
 }
 
-class ColorDot extends StatelessWidget {
-  const ColorDot({
+class ColorDot extends StatelessWidget with _Utility {
+  ColorDot({
     super.key,
     required this.color,
     this.isSelected = false,
@@ -71,13 +73,13 @@ class ColorDot extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(
           top: kdefaultPaddin / 4, right: kdefaultPaddin / 2),
-      height: 24,
-      width: 24,
-      padding: const EdgeInsets.all(2.5),
+      height: height,
+      width: width,
+      padding: colorDotPad,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(
-          color: isSelected ? color : Colors.transparent,
+          color: isSelected ? color : colorSelected,
         ),
       ),
       child: DecoratedBox(
@@ -85,4 +87,13 @@ class ColorDot extends StatelessWidget {
       ),
     );
   }
+}
+
+class _Utility {
+  final EdgeInsets colorDotPad = const EdgeInsets.all(2.5);
+  final double height = 24;
+  final double width = 24;
+  final Color colorSelected = Colors.transparent;
+  final String colorText = "Color";
+  final String sizeText = "Size";
 }

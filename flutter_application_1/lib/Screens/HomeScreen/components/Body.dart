@@ -1,5 +1,4 @@
 // ignore_for_file: file_names
-import 'package:hexcolor/hexcolor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Screens/DetailsScreen/DetailsScreen.dart';
 import 'package:flutter_application_1/Screens/HomeScreen/components/ItemCard.dart';
@@ -20,10 +19,9 @@ class Body extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: kdefaultPaddin),
           child: Text(
-            "Happy Shop",
+            mainTitle,
             style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                   fontWeight: FontWeight.w500,
-                  fontSize: 27,
                 ),
           ),
         ),
@@ -34,8 +32,8 @@ class Body extends StatelessWidget {
           child: GridView.builder(
             itemCount: products.length,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 0.75,
+                crossAxisCount: gridAxisCount,
+                childAspectRatio: gridAspectRadio,
                 mainAxisSpacing: kdefaultPaddin,
                 crossAxisSpacing: kdefaultPaddin),
             itemBuilder: (context, index) => ItemCard(

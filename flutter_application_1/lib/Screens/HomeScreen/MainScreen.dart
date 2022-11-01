@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants.dart';
 import 'components/Body.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -16,7 +15,7 @@ class MainScreen extends StatelessWidget {
 
   AppBar buildAppBar() {
     return AppBar(
-      backgroundColor: HexColor("#fabe9c"),
+      backgroundColor: hexColorAppBar,
       elevation: 0,
       leading: IconButton(
         onPressed: () {},

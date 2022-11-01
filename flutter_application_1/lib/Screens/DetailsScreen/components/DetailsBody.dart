@@ -30,22 +30,14 @@ class DetailsBody extends StatelessWidget {
                       top: size.height * 0.12,
                       left: kdefaultPaddin,
                       right: kdefaultPaddin),
-                  decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(24),
-                          topRight: Radius.circular(24))),
+                  decoration: detaBackContDec(),
                   child: Column(
                     children: [
                       ColorsandSize(product: product),
                       DecriptionWidget(product: product),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      const CardCounter(),
-                      const SizedBox(
-                        height: 35,
-                      ),
+                      Spacer(),
+                      CardCounter(),
+                      Spacer(),
                       ShopbandBuy(product: product)
                     ],
                   ),
@@ -56,6 +48,19 @@ class DetailsBody extends StatelessWidget {
           )
         ],
       ),
+    );
+  }
+
+  BoxDecoration detaBackContDec() {
+    return const BoxDecoration(
+        color: detaBackContCol,
+        borderRadius: BorderRadius.only(
+            topLeft: detaBodycontRadius, topRight: detaBodycontRadius));
+  }
+
+  SizedBox Spacer() {
+    return const SizedBox(
+      height: 30,
     );
   }
 }

@@ -18,28 +18,28 @@ class ProductTitleandImageWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Aristokratic Hand Bag",
+            detaMainTitle,
             style: Theme.of(context)
                 .textTheme
                 .bodyLarge
-                ?.copyWith(color: Colors.white, fontWeight: FontWeight.w500),
+                ?.copyWith(color: detaTextCol, fontWeight: FontWeight.w500),
           ),
           Text(
             product.title,
             style: Theme.of(context)
                 .textTheme
                 .headlineMedium
-                ?.copyWith(color: Colors.white, fontWeight: FontWeight.w600),
+                ?.copyWith(color: detaTextCol, fontWeight: FontWeight.w600),
           ),
           Row(
             children: [
               RichText(
                 text: TextSpan(children: [
-                  const TextSpan(text: "Price\n"),
+                  const TextSpan(text: "$detaPriceLabel\n"),
                   TextSpan(
                     text: "\$${product.price}",
                     style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                        color: Colors.white, fontWeight: FontWeight.bold),
+                        color: detaTextCol, fontWeight: FontWeight.bold),
                   )
                 ]),
               ),

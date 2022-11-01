@@ -45,10 +45,10 @@ class _CardCounterState extends State<CardCounter> {
         const SizedBox(width: 150),
         IconButton(
           onPressed: () {},
-          icon: const Icon(
+          icon: Icon(
             FontAwesomeIcons.heartCirclePlus,
-            color: Colors.red,
-            size: 30,
+            color: _Utility().iconColor,
+            size: _Utility().iconSize,
           ),
         ),
       ],
@@ -58,16 +58,23 @@ class _CardCounterState extends State<CardCounter> {
   SizedBox buildOutlinBut(
       {required IconData icon, required VoidCallback press}) {
     return SizedBox(
-      width: 40,
-      height: 32,
+      width: _Utility().width,
+      height: _Utility().height,
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
             padding: EdgeInsets.zero,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10))),
+            shape: RoundedRectangleBorder(borderRadius: cardCountRad)),
         onPressed: press,
-        child: Icon(icon, color: Colors.black),
+        child: Icon(icon, color: cardCountCol),
       ),
     );
   }
+}
+
+class _Utility {
+  final double height = 32;
+  final double width = 40;
+  final double iconSize = 30;
+
+  final Color iconColor = Colors.red;
 }

@@ -21,9 +21,7 @@ class ItemCard extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              decoration: BoxDecoration(
-                  color: product.color,
-                  borderRadius: BorderRadius.circular(16)),
+              decoration: itemCardDec(),
               child: Image.asset(
                 product.image,
               ),
@@ -52,5 +50,9 @@ class ItemCard extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  BoxDecoration itemCardDec() {
+    return BoxDecoration(color: product.color, borderRadius: itemCardradius);
   }
 }

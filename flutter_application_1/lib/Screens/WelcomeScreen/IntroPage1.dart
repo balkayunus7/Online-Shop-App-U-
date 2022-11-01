@@ -18,7 +18,7 @@ class IntroPage1 extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .headlineMedium
-                ?.copyWith(color: Colors.white, fontWeight: FontWeight.w600),
+                ?.copyWith(color: introColor, fontWeight: FontWeight.w600),
             textAlign: TextAlign.center,
           ),
           Container(
@@ -37,7 +37,7 @@ class IntroPage1 extends StatelessWidget {
               style: Theme.of(context)
                   .textTheme
                   .bodyLarge
-                  ?.copyWith(color: Colors.white, fontWeight: FontWeight.w400),
+                  ?.copyWith(color: introColor, fontWeight: FontWeight.w400),
             ),
           ),
           Container(

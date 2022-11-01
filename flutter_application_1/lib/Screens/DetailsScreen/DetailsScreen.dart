@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/products.dart';
 import 'components/DetailsBody.dart';
+import "package:flutter_application_1/constants.dart";
 
 class DetailsScreen extends StatelessWidget {
   const DetailsScreen({super.key, required this.product});
@@ -24,7 +25,7 @@ class DetailsScreen extends StatelessWidget {
         },
         icon: const Icon(
           Icons.arrow_back_ios_outlined,
-          color: Colors.white,
+          color: detaScrIconCol,
         ),
       ),
       actions: [
@@ -32,14 +33,14 @@ class DetailsScreen extends StatelessWidget {
           onPressed: () {},
           icon: const Icon(
             Icons.search_outlined,
-            color: Colors.white,
+            color: detaScrIconCol,
           ),
         ),
         IconButton(
           onPressed: () {},
           icon: const Icon(
             Icons.shopping_cart_outlined,
-            color: Colors.white,
+            color: detaScrIconCol,
           ),
         ),
       ],

@@ -16,13 +16,13 @@ class IntroPage2 extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 30),
+            padding: const EdgeInsets.symmetric(vertical: kdefaultPaddin * 2),
             child: Text(
               introTitle2,
               style: Theme.of(context)
                   .textTheme
                   .headlineMedium
-                  ?.copyWith(color: Colors.white, fontWeight: FontWeight.w600),
+                  ?.copyWith(color: introColor, fontWeight: FontWeight.w600),
               textAlign: TextAlign.center,
             ),
           ),
@@ -40,7 +40,7 @@ class IntroPage2 extends StatelessWidget {
               style: Theme.of(context)
                   .textTheme
                   .bodyMedium
-                  ?.copyWith(color: Colors.white, fontWeight: FontWeight.w400),
+                  ?.copyWith(color: introColor, fontWeight: FontWeight.w400),
             ),
           ),
           Container(
